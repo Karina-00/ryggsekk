@@ -30,6 +30,7 @@ def brute_force(capacity, n, items):
     solution = ''
     for i in range(1, 2**n-1):
         binary = dec_to_bin(i, n)
+        # print(binary)
         total_weight = weights_sum(binary, items)
 
         if total_weight <= capacity:
@@ -37,8 +38,9 @@ def brute_force(capacity, n, items):
             if total_value > max_value:
                 max_value = total_value
                 solution = binary
-    result = find_solution(solution)
-    print('Lista elementow: {', ', '.join(result), '}')
-    print('Waga wybranych elementów: ', weights_sum(solution, items))
-    print('Wartosc wybranych elementów: ', value_sum(solution, items))
-    return result
+    # result = find_solution(solution)
+    # print('Lista elementow: {', ', '.join(result), '}')
+    # print('Waga wybranych elementów: ', weights_sum(solution, items))
+    # print('Wartosc wybranych elementów: ', value_sum(solution, items))
+    # return result
+    return solution
