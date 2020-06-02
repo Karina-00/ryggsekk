@@ -1,8 +1,8 @@
 from time import *
-from rygg.classes import *
-from rygg.dynamic import *
-from rygg.heuristic import *
-from rygg.brute_force import *
+from .rygg.classes import *
+from .rygg.dynamic import *
+from .rygg.heuristic import *
+from .rygg.brute_force import *
 
 
 capacity = int(input())
