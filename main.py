@@ -24,7 +24,7 @@ with open('data/1.in') as f:
 # 200_30
 itemsLib5 = []
 i = 0
-with open('/data/input5.txt') as f:
+with open('data/input5.txt') as f:
     c = 1
     for line in f:
         if c > 2:
@@ -41,7 +41,7 @@ with open('/data/input5.txt') as f:
 # 300_30
 itemsLib6 = []
 i = 0
-with open('/data/input6.txt') as f:
+with open('data/input6.txt') as f:
     c = 1
     for line in f:
         if c > 2:
