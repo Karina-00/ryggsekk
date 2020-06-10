@@ -38,27 +38,26 @@ def dynamic(size, itemsc, items):
     p = [0, *[item.value for item in items]]
     id = [0, *[item.id for item in items]]
     # table = [[0 for i in range(size)]] + [[0] for i in range(itemsc)]
-    table = [[0 for j in range(size)] for i in range(itemsc + 1)]
+    table = [[0 for j in range(size + 1)] for i in range(itemsc + 1)]
     # print(len(table), len(table[len(table) - 1]))
 
     for _row in range(1, len(table)):
-        for _cap in range(1, size):
+        for _cap in range(1, size + 1):
             table[_row][_cap] = table[_row - 1][_cap] if _cap < w[_row] else \
                 max(table[_row - 1][_cap], table[_row - 1]
                     [_cap - w[_row]] + p[_row])
 
-    print(table[len(table) - 1][len(table[len(table) - 1]) - 1])
-
     trace = _trace_content(items,
                            len(table) - 1, len(table[len(table) - 1]) - 1, table, w, [])
 
-    # print(trace, sum([p[x] for x in trace]))
+    print("value", sum([p[x] for x in trace]), sep=";", end=";")
+    print("size", sum([w[x] for x in trace]), sep=";", end=";")
 
-    print(
-        # trace,
-        # sum([p[x] for x in trace]),
-        [id[item] for item in trace]
-    )
+    # print(
+    #     # trace,
+    #     # sum([p[x] for x in trace]),
+    #     [id[item] for item in trace]
+    # )
 
     # for row in table:
     #     print("".join([

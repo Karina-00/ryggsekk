@@ -1,17 +1,27 @@
-- [ ] Wygeneruj zbiór n przedmiotów, dla każdego podając jego objętość (`w(i)`) i wartość (`p(i)`). Wartości `n` oraz `C` dobierz eksperymentalnie. Dane te umieść w pliku, w następujący sposób:
+# Solving the Knapsack Problem
 
-  ```
-  C
-  n
-  p1 w1
-  p2 w2
-  ...
-  pn wn
-  ```
+> Python 3.5+
 
-- [ ] Zaimplementuj algorytm programowania dynamicznego (PD); oraz
-- [ ] algorytm siłowy (brute force), które rozwiążą problem poszukiwania najbardziej wartościowego zbioru przedmiotów.
-- [ ] Dane do obliczeń mają być wczytywane z plików (przynajmniej na potrzeby zajęć - turniej zaliczeniowy). Zasady turnieju przedstawię w terminie póniejszym na slacku.
-- [ ] Porównaj efektywność działania algorytmów dla tych samych instancji testowych poprzez pomiar czasu obliczeń (dla 10-15 różnych punktów pomiarowych).
-- [ ] Przedstaw wyniki na wykresach (lub w formie tabelki) t=f(n) (dla stałej pojemnośći plecaka c) oraz t=f(c) (dla stałej liczby przedmiotów n)
-- [ ] Zastanów się nad wnioskami dotyczącymi zastosowanych metod oraz ich złożoności obliczeniowej. Do jakiej klasy problemów należy rozważany problem?
+## Run
+
+```sh
+python3 main.py [-h/-d/-f]
+# -h    for value/size heuristic
+# -d    for dynamic search (optimised solution)
+# -f    for brute force exhaustive search (optimised solution)
+```
+
+## Data
+
+```py
+# from stdin or from file via stream redirection
+c               # max container Capacity
+n               # Number of items' characteristics
+s(0) v(0)       # characteristics of n elements
+… …             # Size and Value of next elements
+s(n-1) s(n-1)   # separated by space
+```
+
+> Total of `n+2` lines
+
+Data is read by main and `Item` objects are created based on the characteristics.
